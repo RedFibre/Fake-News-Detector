@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake News Detection</title>
+</head>
+<body>
+    <form method="POST" action="/predict">
+        <label for="text">Enter the news text:</label><br>
+        <input type="text" id="text" name="text"><br><br>
+        <button type="submit">Predict</button>
+    </form>
+    <br>
+    <p>Prediction: <span id="prediction"></span></p>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $('form').on('submit', function(event) {
+            event.preventDefault();
+            var text = $('#text').val();
+            $.ajax({
+                type: 'POST',
+                url: '/predict',
+                data: {'text': text},
+                success: function(data) {
+                    var prediction = data.prediction;
+                    $('#prediction').text(prediction);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
