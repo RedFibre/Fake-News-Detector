@@ -19,7 +19,6 @@ def home():
 def predict():
     # Get the text input from the form
     text = request.form.get('text')
-
     # Transform the text using the TfidfVectorizer
     text_transformed = vectorizer.transform([text])
 
