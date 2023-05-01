@@ -1,23 +1,47 @@
-# Fake News Detector Chrome Extension
-The Fake News Detector Chrome Extension is a tool that helps users identify fake news websites while browsing the internet. The extension works by analyzing the content of a website and comparing it to a database of known fake news websites. If the website is identified as a fake news website, the extension will display a warning message to the user.
+# Fake News Detection Chrome Extension
 
-# Installation
-To install the Fake News Detector Chrome Extension, follow these steps:
+This is a Chrome extension that allows users to detect whether a news article is real or fake.
 
-1. Download the latest version of the extension from the Chrome Web Store.
-2. Click on the "Add to Chrome" button to install the extension.
-3. The extension will be added to your Chrome browser.
+## Installation
 
-# Usage
-To use the Fake News Detector Chrome Extension, simply browse the internet as you normally would. If you visit a website that the extension identifies as a fake news website, a warning message will be displayed.
+To install the extension, follow these steps:
 
-# Contributing
-We welcome contributions to the Fake News Detector Chrome Extension. To contribute, follow these steps:
+1. Clone the repository or download the source code.
+2. Open Google Chrome and navigate to `chrome://extensions`.
+3. Turn on "Developer mode" using the toggle switch in the top right corner.
+4. Click the "Load unpacked" button and select the folder containing the source code.
 
-1. Fork the repository on GitHub.
-2. Clone your forked repository to your local machine.
-3. Make your changes to the code.
-4. Test your changes thoroughly.
-5. Commit your changes and push them to your forked repository.
-6. Create a pull request on the original repository.
-7. Before making any significant changes, we recommend opening an issue to discuss your proposed changes with the maintainers.
+## Usage
+
+To use the extension, follow these steps:
+
+1. Navigate to a web page containing a news article.
+2. Click on the extension icon in the top right corner of the Chrome window.
+3. Enter the text of the article into the text box.
+4. Click the "Predict" button to determine whether the article is real or fake.
+
+## Flask App
+
+To run the Flask app, follow these steps:
+
+1. Install Python 3.x on your system.
+2. Install the required packages using pip: `pip install -r requirements.txt`
+3. Run the Flask app: `python app.py`
+4. Navigate to `http://localhost:5000` in your web browser to access the web interface.
+
+## Technologies Used
+JavaScript
+jQuery
+Flask
+Python
+HTML
+CSS
+
+## Contributors
+
+- Devansh 
+- Shobhan 
+- Krishna 
+- Omkar 
+
+## The project is made for internship work under Red Fibre 
