@@ -1,15 +1,26 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Fake News Detection Extension",
   "version": "1.0",
 
-  "browser_action": {
+  "action": {
     "default_popup": "popup.html"
   },
 
+  "host_permissions": [
+    "http://127.0.0.1:5000/"
+  ],
+
   "permissions": [
     "activeTab",
-    "http://127.0.0.1:5000/"
+    "scripting"
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["popup.js"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
   ]
 }
-  
+

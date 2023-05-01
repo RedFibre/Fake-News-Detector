@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify, render_template
 import pickle
 import numpy as np
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Load the SVM model and TfidfVectorizer from the pickle files
 with open('svm_model.pkl', 'rb') as f:
@@ -19,14 +21,17 @@ def home():
 def predict():
     # Get the text input from the form
     text = request.form.get('text')
-    # Transform the text using the TfidfVectorizer
-    text_transformed = vectorizer.transform([text])
+    if text is not None:
+        # Transform the text using the TfidfVectorizer
+        text_transformed = vectorizer.transform([text])
 
-    # Make the prediction using the SVM model
-    prediction = model.predict(text_transformed)[0]
+        # Make the prediction using the SVM model
+        prediction = model.predict(text_transformed)[0]
 
-    # Return the prediction as a JSON object
-    return jsonify({'prediction': int(prediction)})
+        # Return the prediction as a JSON object
+        return jsonify({'prediction': int(prediction)})
+    else:
+        return jsonify({'error': 'Input text not provided.'})
 
 if __name__ == '__main__':
     app.run(debug=True)
