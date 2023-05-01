@@ -1,15 +1,15 @@
 {
-    "manifest_version": 2,
-    "name": "Fake News Detection Extension",
-    "version": "1.0",
-  
-    "browser_action": {
-      "default_popup": "popup.html"
-    },
-  
-    "permissions": [
-      "activeTab",
-      "http://localhost:5000/*"
-    ]
-  }
+  "manifest_version": 2,
+  "name": "Fake News Detection Extension",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+
+  "permissions": [
+    "activeTab",
+    "http://127.0.0.1:5000/"
+  ]
+}
   
